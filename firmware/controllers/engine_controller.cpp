@@ -461,7 +461,7 @@ void commonInitEngineController() {
 	// This lets us selectively mock them for each test.
 	initNewSensors();
 #endif /* EFI_UNIT_TEST */
-
+efiPrintf("commonInitEngineController() test --------------------------------------------------------");
 	initSensors();
 
 	initAccelEnrichment();
