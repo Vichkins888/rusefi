@@ -160,7 +160,6 @@ const char *errorCookieToName(ErrorCookie cookie)
 #define printErrorState()											\
 do {																\
 	PRINT("Power cycle count: %lu", bootCount);						\
-PRINT("TEST");						\
 																	\
 	if (cookie == ErrorCookie::None) {								\
 		break;														\
