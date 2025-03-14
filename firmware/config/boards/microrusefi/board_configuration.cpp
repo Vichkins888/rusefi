@@ -137,9 +137,15 @@ void setBoardConfigOverrides() {
 
 	// SPI3 for expansion header
 	// Don't override enable since you might want these pins for something else
-	engineConfiguration->spi3mosiPin = Gpio::C12;
-	engineConfiguration->spi3misoPin = Gpio::C11;
-	engineConfiguration->spi3sckPin = Gpio::C10;
+	//engineConfiguration->spi3mosiPin = Gpio::C12;
+	//engineConfiguration->spi3misoPin = Gpio::C11;
+	//engineConfiguration->spi3sckPin = Gpio::C10;
+
+  engineConfiguration->is_enabled_spi_3 = true;
+ 	// MOSI not needed, we have one-way communication here
+ 	engineConfiguration->spi3misoPin = Gpio::C11;
+ 	engineConfiguration->spi3sckPin = Gpio::C10;
+ 	engineConfiguration->max31855_cs[0] = Gpio::B8;
 }
 
 /**
@@ -187,6 +193,12 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->ignitionMode = IM_INDIVIDUAL_COILS; // IM_WASTED_SPARK
 	engineConfiguration->crankingInjectionMode = IM_SIMULTANEOUS;
 	engineConfiguration->injectionMode = IM_SIMULTANEOUS;//IM_BATCH;// IM_SEQUENTIAL;
+
+  engineConfiguration->is_enabled_spi_3 = true;
+ 	// MOSI not needed, we have one-way communication here
+ 	engineConfiguration->spi3misoPin = Gpio::C11;
+ 	engineConfiguration->spi3sckPin = Gpio::C10;
+ 	engineConfiguration->max31855_cs[0] = Gpio::B8;
 }
 
 static Gpio MRE_OUTPUTS[] = {
