@@ -25,7 +25,7 @@
 #include "mpu_util.h"
 #endif /* EFI_PROD_CODE */
 
-#if EFI_MAX_31855
+#if (EFI_PROD_CODE || !EFI_SIMULATOR)
 
 #include "thread_controller.h"
 #include "stored_value_sensor.h"
