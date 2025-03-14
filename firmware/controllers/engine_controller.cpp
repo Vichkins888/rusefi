@@ -410,9 +410,9 @@ void commonInitEngineController() {
 	addConsoleAction("reset_accel", resetAccel);
 #endif /* EFI_PROD_CODE */
 
-#if EFI_SIMULATOR || EFI_UNIT_TEST
+//#if EFI_SIMULATOR || EFI_UNIT_TEST
 	printf("commonInitEngineController\n");
-#endif
+//#endif
 
 #if !EFI_UNIT_TEST
 	initConfigActions();
