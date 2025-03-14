@@ -33,7 +33,7 @@ void initEgt() {
 #endif
 
 //#if EFI_MAX_31855
-#if (EFI_PROD_CODE || !EFI_SIMULATOR)
+#if (!EFI_SIMULATOR)
   criticalError("initMax3185x reached.");
 	initMax3185x(engineConfiguration->max31855spiDevice, engineConfiguration->max31855_cs);
 #endif /* EFI_MAX_31855 */
@@ -42,7 +42,7 @@ void initEgt() {
 void stopEgt(void)
 {
 	/* TODO: also stop CAN sensors */
-#if (EFI_PROD_CODE || !EFI_SIMULATOR)
+#if (!EFI_SIMULATOR)
 	stopMax3185x();
 #endif /* EFI_MAX_31855 */
 }
@@ -50,7 +50,7 @@ void stopEgt(void)
 void startEgt(void)
 {
 	/* TODO: also start CAN sensors */
-#if (EFI_PROD_CODE || !EFI_SIMULATOR)
+#if (!EFI_SIMULATOR)
 	startMax3185x(engineConfiguration->max31855spiDevice, engineConfiguration->max31855_cs);
 #endif /* EFI_MAX_31855 */
 }
