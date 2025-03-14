@@ -104,6 +104,9 @@ static void sensorStartUpOrReconfiguration(bool isFirstTime) {
 	initRangeSensors();
 #endif
 	initFlexSensor(isFirstTime);
+
+  efiPrintf("sensorStartUpOrReconfiguration() test");
+	initEgt();
 }
 
 
@@ -120,6 +123,9 @@ void initNewSensors() {
   // todo:
 	initLambda();
 	// todo: 'isFirstTime' approach for initEgt vs startEgt
+
+efiPrintf("initNewSensors() test");
+  
 	initEgt();
 	initBaro();
 
