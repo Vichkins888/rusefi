@@ -14,6 +14,7 @@ static AemXSeriesEgt aemEgt6(5, SensorType::EGT6);
 #endif
 
 void initEgt() {
+  /*
 #if EFI_CAN_SUPPORT
 	if (engineConfiguration->enableAemXSeriesEgt) {
 		if (!engineConfiguration->canReadEnabled) {
@@ -31,10 +32,10 @@ void initEgt() {
 		return;
 	}
 #endif
+*/
+  
 efiPrintf("MAX31855 test 1");
-//#if EFI_MAX_31855
-#if (!EFI_SIMULATOR)
-  criticalError("initMax3185x reached.");
+#if EFI_MAX_31855
 	initMax3185x(engineConfiguration->max31855spiDevice, engineConfiguration->max31855_cs);
 #endif /* EFI_MAX_31855 */
 }
@@ -42,7 +43,7 @@ efiPrintf("MAX31855 test 1");
 void stopEgt(void)
 {
 	/* TODO: also stop CAN sensors */
-#if (!EFI_SIMULATOR)
+#if EFI_MAX_31855
 	stopMax3185x();
 #endif /* EFI_MAX_31855 */
 }
@@ -50,7 +51,7 @@ void stopEgt(void)
 void startEgt(void)
 {
 	/* TODO: also start CAN sensors */
-#if (!EFI_SIMULATOR)
+#if EFI_MAX_31855
 	startMax3185x(engineConfiguration->max31855spiDevice, engineConfiguration->max31855_cs);
 #endif /* EFI_MAX_31855 */
 }
