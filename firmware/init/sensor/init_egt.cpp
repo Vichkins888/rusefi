@@ -31,7 +31,7 @@ void initEgt() {
 		return;
 	}
 #endif
-
+efiPrintf("MAX31855 test 1");
 //#if EFI_MAX_31855
 #if (!EFI_SIMULATOR)
   criticalError("initMax3185x reached.");
