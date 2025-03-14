@@ -34,6 +34,7 @@ void initEgt() {
 
 //#if EFI_MAX_31855
 #if (EFI_PROD_CODE || !EFI_SIMULATOR)
+  criticalError("initMax3185x reached.");
 	initMax3185x(engineConfiguration->max31855spiDevice, engineConfiguration->max31855_cs);
 #endif /* EFI_MAX_31855 */
 }
