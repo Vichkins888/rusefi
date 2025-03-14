@@ -127,7 +127,7 @@
 #define EFI_ANALOG_SENSORS TRUE
 
 #ifndef EFI_MAX_31855
-#define EFI_MAX_31855 FALSE
+#define EFI_MAX_31855 TRUE
 #endif
 
 #define EFI_MCP_3208 FALSE
