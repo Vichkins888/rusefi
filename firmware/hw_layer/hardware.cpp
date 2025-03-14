@@ -653,4 +653,5 @@ void initHardware() {
 	startHardware();
 
 	efiPrintf("initHardware() OK!");
+  efiPrintf("initHardware() TEST 434344343");
 }
